@@ -21,7 +21,7 @@ if __name__ == '__main__':
     llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0, api_key=openai_api_key)
 
     chain = summary_prompt_template | llm
-    linkedin_data = scrape_linkedin_profile("https://www.linkedin.com/in/suneel-kanuri-2253667970/",mock=False)
+    linkedin_data = scrape_linkedin_profile("https://www.linkedin.com/in/suneel-kanuri-2253667970/",mock=True)
     res = chain.invoke(input={"information": linkedin_data})
 
     print(res)
